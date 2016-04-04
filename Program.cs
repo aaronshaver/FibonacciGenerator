@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace FibonacciGenerator
@@ -39,8 +39,13 @@ namespace FibonacciGenerator
 
         private static void PrintOutput(int iterations, string numbersText)
         {
-            Console.WriteLine($"\nHere are the {iterations} Fibonacci number(s) you asked for:");
-            Console.WriteLine(numbersText);
+            Console.WriteLine();
+            if (numbersText != String.Empty)
+            {
+                Console.WriteLine($"Here are the {iterations} Fibonacci number(s) you asked for:");
+                Console.WriteLine(numbersText);
+            }
+            else Console.WriteLine("Warning: your input resulted in no numbers returned.");
             Console.WriteLine("\nPress <Enter> key to continue...");
             Console.ReadLine();
         }
