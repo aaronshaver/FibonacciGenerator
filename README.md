@@ -9,4 +9,4 @@ This is a helper class and associated console application which print an arbitar
 
 ## Usage
 
-...to do
+Assuming you have the solution loaded, run the program by: clicking the green triangle + Start button in the toolbar in Visual Studio, or clicking Debug -> Start Debugging in the menus, or pressing F5. A console window with the running program will appear.
