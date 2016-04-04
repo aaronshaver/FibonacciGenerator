@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace fibonacci_generator_vs
+namespace FibonacciGenerator
 {
     public static class Fibonacci
     {

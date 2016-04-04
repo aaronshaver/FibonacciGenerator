@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace fibonacci_generator_vs
+namespace FibonacciGenerator
 {
     [TestClass]
     public class FibonacciTests
