@@ -10,18 +10,18 @@ namespace FibonacciGenerator
             var result = new List<int> { 0 };
             return result;
 
-            var numbers = new List<int>();
-            var previousNumber = 0;
-            var nextNumber = 1;
-            Console.WriteLine(previousNumber);
-            do
-            {
-                numbers.Add(nextNumber);
-                var currentNumber = nextNumber;
-                nextNumber += previousNumber;
-                previousNumber = currentNumber;
-            } while (nextNumber < iterations);
-            return numbers;
+//            var numbers = new List<int>();
+//            var previousNumber = 0;
+//            var nextNumber = 1;
+//            Console.WriteLine(previousNumber);
+//            do
+//            {
+//                numbers.Add(nextNumber);
+//                var currentNumber = nextNumber;
+//                nextNumber += previousNumber;
+//                previousNumber = currentNumber;
+//            } while (nextNumber < iterations);
+//            return numbers;
         }
     }
 }
