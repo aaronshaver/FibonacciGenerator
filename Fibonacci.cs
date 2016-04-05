@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace FibonacciGenerator
@@ -7,21 +8,22 @@ namespace FibonacciGenerator
         public static List<int> GetNumbers(int iterations)
         {
             var result = new List<int>();
-            if (iterations > 0) result.Add(0);
-            return result;
+            if (!(iterations > 0)) return result;
 
-//            var numbers = new List<int>();
-//            var previousNumber = 0;
-//            var nextNumber = 1;
-//            Console.WriteLine(previousNumber);
-//            do
-//            {
-//                numbers.Add(nextNumber);
-//                var currentNumber = nextNumber;
-//                nextNumber += previousNumber;
-//                previousNumber = currentNumber;
-//            } while (nextNumber < iterations);
-//            return numbers;
+            var previousNumber = 0;
+            result.Add(previousNumber);
+            var nextNumber = 1;
+            var counter = 1;
+
+            while (counter < iterations)
+            {
+                result.Add(nextNumber);
+                var currentNumber = nextNumber;
+                nextNumber += previousNumber;
+                previousNumber = currentNumber;
+                counter += 1;
+            }
+            return result;
         }
     }
 }
