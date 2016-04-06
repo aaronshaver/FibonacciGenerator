@@ -9,12 +9,8 @@ This is a toy project with a helper class and associated console application. It
 
 ## Usage
 
-You can run the program as a console application, assuming you have the solution loaded in Visual Studio, by:
+There are three ways you could use this application:
 
-* clicking the green triangle + Start button in the toolbar
-* or clicking Debug -> Start Debugging in the menus
-* or pressing F5
- 
-A console window with the running program will appear.
-
-Alternatively, you can just copy the code from the three .CS source code files.
+1. Load the solution into Visual Studio and then Debug menu -> Start Debugging
+2. Use the precompiled .exe in bin/Debug
+3. Copy the code from the three .CS source code files into your own solution (you may need to add references for the unit testing and System.Web)
