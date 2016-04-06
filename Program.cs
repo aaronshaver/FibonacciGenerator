@@ -8,9 +8,9 @@ namespace FibonacciGenerator
         public static void Main(string[] arguments)
         {
             var iterations = GetNumberOfIterations();
-            var numbers = Fibonacci.GetNumbers(iterations);
-            var numbersText = GetFormattedNumbers(numbers);
-            PrintOutput(iterations, numbersText);
+            var result = Fibonacci.GetNumbers(iterations);
+            var numbersText = GetFormattedNumbers(result);
+            PrintOutput(numbersText, result.TooLarge);
         }
 
         private static int GetNumberOfIterations()
@@ -26,27 +26,35 @@ namespace FibonacciGenerator
             return iterations;
         }
 
-        private static string GetFormattedNumbers(List<int> numbers)
+        private static string GetFormattedNumbers(Fibonacci.FibonacciResult result)
         {
             var numbersText = "";
-            foreach (var number in numbers)
+            foreach (var number in result.Numbers)
             {
-                numbersText += number + ", ";
+                numbersText += number + "\n";
             }
-            numbersText = numbersText.TrimEnd(',', ' ');
             return numbersText;
         }
 
-        private static void PrintOutput(int iterations, string numbersText)
+        private static void PrintOutput(string numbersText, bool tooLarge)
         {
-            Console.WriteLine();
             if (numbersText != String.Empty)
             {
-                Console.WriteLine($"Here are the {iterations} Fibonacci number(s) you asked for:");
+                Console.WriteLine("\nHere are the Fibonacci number(s) you asked for.");
                 Console.WriteLine(numbersText);
+                if (tooLarge)
+                {
+                    Console.WriteLine("*** WARNING: your results have been truncated!");
+                    Console.WriteLine($"This app can only print the first {Fibonacci.MaxValue} Fibonacci numbers.\n");
+                }
             }
-            else Console.WriteLine("Warning: your input resulted in no numbers returned.");
-            Console.WriteLine("\nPress <Enter> key to continue...");
+            else
+            {
+                Console.WriteLine("\n*** WARNING: your input resulted in no numbers.");
+                Console.WriteLine($"Valid inputs are whole numbers between 1 and {Fibonacci.MaxValue} inclusive.");
+            }
+            
+            Console.WriteLine("Press <Enter> key to continue...");
             Console.ReadLine();
         }
     }
