@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace FibonacciGenerator
 {
@@ -7,26 +6,32 @@ namespace FibonacciGenerator
     {
         public static void Main(string[] arguments)
         {
-            var iterations = GetNumberOfIterations();
-            var result = Fibonacci.GetNumbers(iterations);
-            var numbersText = GetFormattedNumbers(result);
-            PrintOutput(numbersText, result.TooLarge);
-        }
-
-        private static int GetNumberOfIterations()
-        {
-            int iterations;
-            bool validNumber;
             do
             {
-                Console.WriteLine("How many Fibonacci numbers would you like to print? ");
-                var rawInput = Console.ReadLine();
-                validNumber = int.TryParse(rawInput, out iterations);
-            } while (!validNumber);
+                var userInput = GetUserInput();
+                if (userInput == "") break;
+                var parsedIterations = GetParsedIterations(userInput);
+                var result = Fibonacci.GetNumbers(parsedIterations);
+                var numbersText = GetFormattedNumbers(result);
+                PrintOutput(numbersText, result.TooLarge);
+            } while (true);
+        }
+
+        private static string GetUserInput()
+        {
+            Console.WriteLine("How many Fibonacci numbers would you like to print?");
+            Console.WriteLine("(press <Enter> key without inputting anything to exit program)");
+            return Console.ReadLine();
+        }
+
+        private static int GetParsedIterations(string rawInput)
+        {
+            var iterations = 0;
+            int.TryParse(rawInput, out iterations);
             return iterations;
         }
 
-        private static string GetFormattedNumbers(Fibonacci.FibonacciResult result)
+    private static string GetFormattedNumbers(Fibonacci.FibonacciResult result)
         {
             var numbersText = "";
             foreach (var number in result.Numbers)
@@ -51,11 +56,8 @@ namespace FibonacciGenerator
             else
             {
                 Console.WriteLine("\n*** WARNING: your input resulted in no numbers.");
-                Console.WriteLine($"Valid inputs are whole numbers between 1 and {Fibonacci.MaxValue} inclusive.");
+                Console.WriteLine($"Valid inputs are whole numbers between 1 and {Fibonacci.MaxValue} inclusive.\n");
             }
-            
-            Console.WriteLine("Press <Enter> key to continue...");
-            Console.ReadLine();
         }
     }
 }
