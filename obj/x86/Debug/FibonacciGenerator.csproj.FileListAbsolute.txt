@@ -1,7 +1,0 @@
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\bin\Debug\ConsoleApplication.exe.config
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\bin\Debug\ConsoleApplication.exe
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\bin\Debug\ConsoleApplication.pdb
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\obj\x86\Debug\FibonacciGenerator.csprojResolveAssemblyReference.cache
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\obj\x86\Debug\ConsoleApplication.exe
-C:\Users\r625407\Documents\GitHub\FibonacciGenerator\obj\x86\Debug\ConsoleApplication.pdb
